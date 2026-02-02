@@ -14,6 +14,8 @@ def multi_head_attention(Q: np.ndarray, K: np.ndarray, V: np.ndarray,
     d_model = Q.shape[-1]
     d_k = d_model // num_heads
     batch_size = Q.shape[0]
+    N = Q.shape[1]
+
 
     Q_proj = Q @ W_q
     K_proj = K @ W_k
